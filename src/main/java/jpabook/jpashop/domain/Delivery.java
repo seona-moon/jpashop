@@ -14,7 +14,7 @@ public class Delivery {
     @Column(name = "delivery_id")
     private Long id;
 
-    @OneToOne(mappedBy = "delivery") //일대일 매핑, 연관관계의 거울
+    @OneToOne(mappedBy = "delivery", fetch = FetchType.LAZY) //일대일 매핑, 연관관계의 거울
     private Order order;
 
     @Embedded
