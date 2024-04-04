@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jpabook.jpashop.domain.service.MemberServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-04T15:33:57" hostname="seonaui-MacBookAir.local" time="0.954">
+  <properties/>
+  <testcase name="회원가입" classname="jpabook.jpashop.domain.service.MemberServiceTest" time="0.954"/>
+  <system-out><![CDATA[00:33:53.680 [Test worker] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.4)
+
+2024-04-05T00:33:53.930+09:00  INFO 55412 --- [jpashop] [    Test worker] j.j.domain.service.MemberServiceTest     : Starting MemberServiceTest using Java 17.0.8 with PID 55412 (started by seona in /Users/seona/Desktop/Spring/jpashop)
+2024-04-05T00:33:53.931+09:00  INFO 55412 --- [jpashop] [    Test worker] j.j.domain.service.MemberServiceTest     : No active profile set, falling back to 1 default profile: "default"
+2024-04-05T00:33:54.565+09:00  INFO 55412 --- [jpashop] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-05T00:33:54.584+09:00  INFO 55412 --- [jpashop] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JPA repository interfaces.
+2024-04-05T00:33:55.048+09:00  INFO 55412 --- [jpashop] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-05T00:33:55.233+09:00  INFO 55412 --- [jpashop] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f user=SA
+2024-04-05T00:33:55.234+09:00  INFO 55412 --- [jpashop] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-05T00:33:55.272+09:00  INFO 55412 --- [jpashop] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-05T00:33:55.317+09:00  INFO 55412 --- [jpashop] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-05T00:33:55.347+09:00  INFO 55412 --- [jpashop] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-05T00:33:55.597+09:00  INFO 55412 --- [jpashop] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-05T00:33:55.947+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244835947 | took 6ms | statement | connection 2| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+select * from INFORMATION_SCHEMA.SEQUENCES
+select * from INFORMATION_SCHEMA.SEQUENCES;
+2024-04-05T00:33:56.484+09:00  INFO 55412 --- [jpashop] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-05T00:33:56.493+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : drop table if exists category cascade 
+2024-04-05T00:33:56.494+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836494 | took 0ms | statement | connection 3| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+drop table if exists category cascade 
+drop table if exists category cascade ;
+2024-04-05T00:33:56.494+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : drop table if exists category_item cascade 
+2024-04-05T00:33:56.495+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836495 | took 0ms | statement | connection 3| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+drop table if exists category_item cascade 
+drop table if exists category_item cascade ;
+2024-04-05T00:33:56.495+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : drop table if exists delivery cascade 
+2024-04-05T00:33:56.495+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836495 | took 0ms | statement | connection 3| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+drop table if exists delivery cascade 
+drop table if exists delivery cascade ;
+2024-04-05T00:33:56.495+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : drop table if exists item cascade 
+2024-04-05T00:33:56.495+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836495 | took 0ms | statement | connection 3| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+drop table if exists item cascade 
+drop table if exists item cascade ;
+2024-04-05T00:33:56.495+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : drop table if exists member cascade 
+2024-04-05T00:33:56.496+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836496 | took 0ms | statement | connection 3| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+drop table if exists member cascade 
+drop table if exists member cascade ;
+2024-04-05T00:33:56.496+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : drop table if exists order_item cascade 
+2024-04-05T00:33:56.496+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836496 | took 0ms | statement | connection 3| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+drop table if exists order_item cascade 
+drop table if exists order_item cascade ;
+2024-04-05T00:33:56.496+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : drop table if exists orders cascade 
+2024-04-05T00:33:56.497+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836496 | took 0ms | statement | connection 3| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+drop table if exists orders cascade 
+drop table if exists orders cascade ;
+2024-04-05T00:33:56.497+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : drop sequence if exists category_seq
+2024-04-05T00:33:56.497+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836497 | took 0ms | statement | connection 3| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+drop sequence if exists category_seq
+drop sequence if exists category_seq;
+2024-04-05T00:33:56.497+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : drop sequence if exists delivery_seq
+2024-04-05T00:33:56.497+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836497 | took 0ms | statement | connection 3| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+drop sequence if exists delivery_seq
+drop sequence if exists delivery_seq;
+2024-04-05T00:33:56.498+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : drop sequence if exists item_seq
+2024-04-05T00:33:56.498+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836498 | took 0ms | statement | connection 3| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+drop sequence if exists item_seq
+drop sequence if exists item_seq;
+2024-04-05T00:33:56.498+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : drop sequence if exists member_seq
+2024-04-05T00:33:56.498+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836498 | took 0ms | statement | connection 3| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+drop sequence if exists member_seq
+drop sequence if exists member_seq;
+2024-04-05T00:33:56.499+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : drop sequence if exists order_item_seq
+2024-04-05T00:33:56.499+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836499 | took 0ms | statement | connection 3| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+drop sequence if exists order_item_seq
+drop sequence if exists order_item_seq;
+2024-04-05T00:33:56.499+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : drop sequence if exists orders_seq
+2024-04-05T00:33:56.499+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836499 | took 0ms | statement | connection 3| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+drop sequence if exists orders_seq
+drop sequence if exists orders_seq;
+2024-04-05T00:33:56.505+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : create sequence category_seq start with 1 increment by 50
+2024-04-05T00:33:56.507+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836507 | took 1ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+create sequence category_seq start with 1 increment by 50
+create sequence category_seq start with 1 increment by 50;
+2024-04-05T00:33:56.507+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : create sequence delivery_seq start with 1 increment by 50
+2024-04-05T00:33:56.507+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836507 | took 0ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+create sequence delivery_seq start with 1 increment by 50
+create sequence delivery_seq start with 1 increment by 50;
+2024-04-05T00:33:56.508+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : create sequence item_seq start with 1 increment by 50
+2024-04-05T00:33:56.508+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836508 | took 0ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+create sequence item_seq start with 1 increment by 50
+create sequence item_seq start with 1 increment by 50;
+2024-04-05T00:33:56.508+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : create sequence member_seq start with 1 increment by 50
+2024-04-05T00:33:56.509+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836509 | took 0ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+create sequence member_seq start with 1 increment by 50
+create sequence member_seq start with 1 increment by 50;
+2024-04-05T00:33:56.509+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : create sequence order_item_seq start with 1 increment by 50
+2024-04-05T00:33:56.509+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836509 | took 0ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+create sequence order_item_seq start with 1 increment by 50
+create sequence order_item_seq start with 1 increment by 50;
+2024-04-05T00:33:56.509+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : create sequence orders_seq start with 1 increment by 50
+2024-04-05T00:33:56.510+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836510 | took 0ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+create sequence orders_seq start with 1 increment by 50
+create sequence orders_seq start with 1 increment by 50;
+2024-04-05T00:33:56.511+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : create table category (category_id bigint not null, parent_id bigint, name varchar(255), primary key (category_id))
+2024-04-05T00:33:56.514+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836514 | took 2ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+create table category (category_id bigint not null, parent_id bigint, name varchar(255), primary key (category_id))
+create table category (category_id bigint not null, parent_id bigint, name varchar(255), primary key (category_id));
+2024-04-05T00:33:56.514+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : create table category_item (category_id bigint not null, item_id bigint not null)
+2024-04-05T00:33:56.514+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836514 | took 0ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+create table category_item (category_id bigint not null, item_id bigint not null)
+create table category_item (category_id bigint not null, item_id bigint not null);
+2024-04-05T00:33:56.515+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : create table delivery (delivery_id bigint not null, city varchar(255), status varchar(255) check (status in ('READY','CAMP')), street varchar(255), zipcode varchar(255), primary key (delivery_id))
+2024-04-05T00:33:56.517+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836517 | took 1ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+create table delivery (delivery_id bigint not null, city varchar(255), status varchar(255) check (status in ('READY','CAMP')), street varchar(255), zipcode varchar(255), primary key (delivery_id))
+create table delivery (delivery_id bigint not null, city varchar(255), status varchar(255) check (status in ('READY','CAMP')), street varchar(255), zipcode varchar(255), primary key (delivery_id));
+2024-04-05T00:33:56.517+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : create table item (price integer not null, stock_quantity integer not null, item_id bigint not null, dtype varchar(31) not null, actor varchar(255), artist varchar(255), author varchar(255), director varchar(255), ect varchar(255), isbn varchar(255), name varchar(255), primary key (item_id))
+2024-04-05T00:33:56.518+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836518 | took 0ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+create table item (price integer not null, stock_quantity integer not null, item_id bigint not null, dtype varchar(31) not null, actor varchar(255), artist varchar(255), author varchar(255), director varchar(255), ect varchar(255), isbn varchar(255), name varchar(255), primary key (item_id))
+create table item (price integer not null, stock_quantity integer not null, item_id bigint not null, dtype varchar(31) not null, actor varchar(255), artist varchar(255), author varchar(255), director varchar(255), ect varchar(255), isbn varchar(255), name varchar(255), primary key (item_id));
+2024-04-05T00:33:56.518+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : create table member (member_id bigint not null, city varchar(255), name varchar(255), street varchar(255), zipcode varchar(255), primary key (member_id))
+2024-04-05T00:33:56.519+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836519 | took 0ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+create table member (member_id bigint not null, city varchar(255), name varchar(255), street varchar(255), zipcode varchar(255), primary key (member_id))
+create table member (member_id bigint not null, city varchar(255), name varchar(255), street varchar(255), zipcode varchar(255), primary key (member_id));
+2024-04-05T00:33:56.519+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : create table order_item (count integer not null, order_price integer not null, item_id bigint, order_id bigint, order_item_id bigint not null, primary key (order_item_id))
+2024-04-05T00:33:56.520+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836520 | took 0ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+create table order_item (count integer not null, order_price integer not null, item_id bigint, order_id bigint, order_item_id bigint not null, primary key (order_item_id))
+create table order_item (count integer not null, order_price integer not null, item_id bigint, order_id bigint, order_item_id bigint not null, primary key (order_item_id));
+2024-04-05T00:33:56.521+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : create table orders (delivery_id bigint unique, member_id bigint, order_date timestamp(6), order_id bigint not null, status varchar(255) check (status in ('ORDER','CANCEL')), primary key (order_id))
+2024-04-05T00:33:56.522+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836522 | took 1ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+create table orders (delivery_id bigint unique, member_id bigint, order_date timestamp(6), order_id bigint not null, status varchar(255) check (status in ('ORDER','CANCEL')), primary key (order_id))
+create table orders (delivery_id bigint unique, member_id bigint, order_date timestamp(6), order_id bigint not null, status varchar(255) check (status in ('ORDER','CANCEL')), primary key (order_id));
+2024-04-05T00:33:56.522+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : alter table if exists category add constraint FK2y94svpmqttx80mshyny85wqr foreign key (parent_id) references category
+2024-04-05T00:33:56.526+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836525 | took 2ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+alter table if exists category add constraint FK2y94svpmqttx80mshyny85wqr foreign key (parent_id) references category
+alter table if exists category add constraint FK2y94svpmqttx80mshyny85wqr foreign key (parent_id) references category;
+2024-04-05T00:33:56.526+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : alter table if exists category_item add constraint FKu8b4lwqutcdq3363gf6mlujq foreign key (item_id) references item
+2024-04-05T00:33:56.527+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836527 | took 1ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+alter table if exists category_item add constraint FKu8b4lwqutcdq3363gf6mlujq foreign key (item_id) references item
+alter table if exists category_item add constraint FKu8b4lwqutcdq3363gf6mlujq foreign key (item_id) references item;
+2024-04-05T00:33:56.527+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : alter table if exists category_item add constraint FKcq2n0opf5shyh84ex1fhukcbh foreign key (category_id) references category
+2024-04-05T00:33:56.528+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836528 | took 0ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+alter table if exists category_item add constraint FKcq2n0opf5shyh84ex1fhukcbh foreign key (category_id) references category
+alter table if exists category_item add constraint FKcq2n0opf5shyh84ex1fhukcbh foreign key (category_id) references category;
+2024-04-05T00:33:56.528+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : alter table if exists order_item add constraint FKija6hjjiit8dprnmvtvgdp6ru foreign key (item_id) references item
+2024-04-05T00:33:56.529+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836529 | took 0ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+alter table if exists order_item add constraint FKija6hjjiit8dprnmvtvgdp6ru foreign key (item_id) references item
+alter table if exists order_item add constraint FKija6hjjiit8dprnmvtvgdp6ru foreign key (item_id) references item;
+2024-04-05T00:33:56.529+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : alter table if exists order_item add constraint FKt4dc2r9nbvbujrljv3e23iibt foreign key (order_id) references orders
+2024-04-05T00:33:56.530+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836530 | took 1ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+alter table if exists order_item add constraint FKt4dc2r9nbvbujrljv3e23iibt foreign key (order_id) references orders
+alter table if exists order_item add constraint FKt4dc2r9nbvbujrljv3e23iibt foreign key (order_id) references orders;
+2024-04-05T00:33:56.531+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : alter table if exists orders add constraint FKtkrur7wg4d8ax0pwgo0vmy20c foreign key (delivery_id) references delivery
+2024-04-05T00:33:56.531+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836531 | took 0ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+alter table if exists orders add constraint FKtkrur7wg4d8ax0pwgo0vmy20c foreign key (delivery_id) references delivery
+alter table if exists orders add constraint FKtkrur7wg4d8ax0pwgo0vmy20c foreign key (delivery_id) references delivery;
+2024-04-05T00:33:56.531+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : alter table if exists orders add constraint FKpktxwhj3x9m4gth5ff6bkqgeb foreign key (member_id) references member
+2024-04-05T00:33:56.532+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244836532 | took 0ms | statement | connection 4| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+alter table if exists orders add constraint FKpktxwhj3x9m4gth5ff6bkqgeb foreign key (member_id) references member
+alter table if exists orders add constraint FKpktxwhj3x9m4gth5ff6bkqgeb foreign key (member_id) references member;
+2024-04-05T00:33:56.535+09:00  INFO 55412 --- [jpashop] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-05T00:33:56.711+09:00  WARN 55412 --- [jpashop] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-05T00:33:56.736+09:00  INFO 55412 --- [jpashop] [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-04-05T00:33:57.147+09:00  INFO 55412 --- [jpashop] [    Test worker] j.j.domain.service.MemberServiceTest     : Started MemberServiceTest in 3.475 seconds (process running for 4.291)
+2024-04-05T00:33:58.072+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : select m1_0.member_id,m1_0.city,m1_0.street,m1_0.zipcode,m1_0.name from member m1_0 where m1_0.name=?
+2024-04-05T00:33:58.074+09:00 TRACE 55412 --- [jpashop] [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [Kim]
+2024-04-05T00:33:58.075+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244838075 | took 0ms | statement | connection 5| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+select m1_0.member_id,m1_0.city,m1_0.street,m1_0.zipcode,m1_0.name from member m1_0 where m1_0.name=?
+select m1_0.member_id,m1_0.city,m1_0.street,m1_0.zipcode,m1_0.name from member m1_0 where m1_0.name='Kim';
+2024-04-05T00:33:58.082+09:00 DEBUG 55412 --- [jpashop] [    Test worker] org.hibernate.SQL                        : select next value for member_seq
+2024-04-05T00:33:58.085+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244838085 | took 1ms | statement | connection 5| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+select next value for member_seq
+select next value for member_seq;
+2024-04-05T00:33:58.117+09:00  INFO 55412 --- [jpashop] [    Test worker] p6spy                                    : #1712244838116 | took 0ms | rollback | connection 5| url jdbc:h2:mem:0b830bdd-851b-4f1c-9eba-f28acf04648f
+
+;
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
