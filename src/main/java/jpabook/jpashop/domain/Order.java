@@ -16,13 +16,16 @@ import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "orders")
 @Getter
 @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Order {
     @Id
     @GeneratedValue
@@ -61,6 +64,8 @@ public class Order {
         this.delivery = delivery;
         delivery.setOrder(this);
     }
+
+    //protected Order(){} // 생성 메서드가 난잡해지지 않기 위해, protected로 제약 놓기. -> NoArgConstructor 어노테이션 가능
 
     //==생성 메서드==//
     // 복잡한 생성자 관계를 하나의 메서드에서 지정해줄 수 있다.
